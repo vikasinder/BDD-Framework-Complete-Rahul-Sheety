@@ -1,0 +1,11 @@
+package pageObjects;
+
+import org.openqa.selenium.WebElement;
+
+public class OfferPage {
+
+
+	@FindBy(xpath="//span[text()='Proceed to checkout']")
+	private WebElement proceedToCheckOut;
+	
+}

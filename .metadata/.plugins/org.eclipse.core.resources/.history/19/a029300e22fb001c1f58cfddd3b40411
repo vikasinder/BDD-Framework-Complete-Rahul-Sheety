@@ -1,0 +1,23 @@
+package GreenkartStepDefinations;
+
+public class SearchProductDefination {
+	
+	@Given("User is already on GreenCart Landing Page")
+	public void user_is_already_on_green_cart_landing_page() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@When("User search with short name {string} and extarcted actual name of product")
+	public void user_search_with_short_name_and_extarcted_actual_name_of_product(String string) {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+	@Then("User search for same shortname in Offer Page to check if product exist")
+	public void user_search_for_same_shortname_in_offer_page_to_check_if_product_exist() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+}

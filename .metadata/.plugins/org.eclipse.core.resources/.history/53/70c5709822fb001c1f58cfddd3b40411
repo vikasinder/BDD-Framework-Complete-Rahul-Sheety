@@ -1,0 +1,8 @@
+package CucumberOptions;
+
+
+@CucumberOptions(Features="src/test/java/Features")
+public class TestNGTestRunner {
+
+	
+}

@@ -1,0 +1,26 @@
+package stepDefinations;
+
+import java.io.IOException;
+
+import io.cucumber.java.After;
+import utils.TestContextSetup;
+
+public class Hooks {
+	
+	TestContextSetup testcontextsetup;
+	
+	public Hooks(TestContextSetup testContextSetup)
+	{
+		this.testcontextsetup=testContextSetup;
+	}
+	// After Runs after every Scenario
+	@After
+	public void tearDown() throws IOException
+	{
+		
+		testcontextsetup.baseClass.WebdriverManager().quit();
+	}
+	//AfterStep Runs After Each step in scenario
+	@AfterStep
+
+}

@@ -1,0 +1,21 @@
+package stepDefinations;
+
+import utils.TestContextSetup;
+
+public class Hooks {
+	
+	TestContextSetup testcontextsetup;
+	
+	public Hooks(TestContextSetup testContextSetup)
+	{
+		this.testcontextsetup=testContextSetup;
+	}
+	
+	@After
+	public void tearDown()
+	{
+		
+		testcontextsetup.baseClass.WebdriverManager().quit();
+	}
+
+}

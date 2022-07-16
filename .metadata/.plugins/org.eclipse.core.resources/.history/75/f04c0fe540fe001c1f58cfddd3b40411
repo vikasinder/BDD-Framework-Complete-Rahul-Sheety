@@ -1,0 +1,54 @@
+package stepDefinations;
+
+import java.awt.Window;
+import java.util.Iterator;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class SearchProductStepDefinations {
+	
+	public static WebDriver driver;
+	
+	
+	@Given("User is already on GreenCart Landing Page")
+	public void user_is_already_on_green_cart_landing_page() {
+	
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\vikas\\RahulShettyCucumber\\CucumberAutomationFramework\\Drivers\\chromedriver.exe");
+		driver= new ChromeDriver();
+		driver.get("https://rahulshettyacademy.com/seleniumPractise/#/");
+		
+	
+	}
+
+	@When("User search with short name {string} and extarcted actual name of product")
+	public void user_search_with_short_name_and_extarcted_actual_name_of_product(String value) {
+	    
+		driver.findElement(By.xpath("//input[@type='Search']")).sendKeys(value);
+		String prodcutName= driver.findElement(By.cssSelector("h4.product-name")).getText().split("-")[0].trim();
+		
+		
+	
+	}
+
+	@Then("User search for {string} same shortname in Offer Page to check if product exist")
+	public void user_search_for_same_shortname_in_offer_page_to_check_if_product_exist(String string) {
+	  
+		driver.findElement(By.linkText("Top Deals")).click();
+		Set<String> S1= driver.getWindowHandles();
+		Iterator<String> i1= S1.iterator();
+		String parentWindow=i1.next();
+		String childWindow=i1.next();
+		driver.switchTo().window(childWindow);
+		
+		
+	
+	}
+
+}

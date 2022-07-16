@@ -1,0 +1,13 @@
+package CucumberOptions;
+
+import io.cucumber.testng.AbstractTestNGCucumberTests;
+import io.cucumber.testng.CucumberOptions;
+
+@CucumberOptions(features="src/test/java/Features",glue="stepDefinations",
+monochrome=true)
+
+//dryRun=True is just used to check whether step DefinItions are there or not
+public class TestNGTestRunner extends AbstractTestNGCucumberTests {
+
+	
+}
